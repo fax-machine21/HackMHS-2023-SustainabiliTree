@@ -243,7 +243,8 @@ upgrade2Counter = 0
 upgrade3Counter = 0
 upgrade4Counter = 0
 
-CRED_TEXT = get_font(25).render(str("Made by: JH, RS, DK, RC"), True, "#00ff00")
+CRED_TEXT = get_font(25).render(str("Made by: JH, RS, DK, RC"), True,
+                                "#00ff00")
 CRED_RECT = CRED_TEXT.get_rect(center=((screen_width // 2), 50))
 CRED_RECT.center = (screen_width // 2, (screen_height // 2) + 335)
 
@@ -254,7 +255,7 @@ while running:
       running = False
 
   screen.fill("#000000")
-  
+
   clicks = start_button.Clicks
   greenCoin = clicks
 
@@ -289,7 +290,7 @@ while running:
   print("plant", upgradesAmount['Plant'])
   print("sapling", upgradesAmount['Sapling'])
 
-  logoicon = pygame.image.load('image_2023-05-20_150250503.png')
+  logoicon = pygame.image.load('logo.png')
   logoicon = pygame.transform.scale(logoicon, (250, 105))
   screen.blit(logoicon, (15, 623))
 

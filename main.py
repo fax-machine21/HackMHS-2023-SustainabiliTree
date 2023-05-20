@@ -284,7 +284,7 @@ while running:
   print("plant", upgradesAmount['Plant'])
   print("sapling", upgradesAmount['Sapling'])
 
-  logoicon = pygame.image.load('image_2023-05-20_150250503.png')
+  logoicon = pygame.image.load('logo.png')
   logoicon = pygame.transform.scale(logoicon, (250, 105))
   screen.blit(logoicon, (15, 623))
 

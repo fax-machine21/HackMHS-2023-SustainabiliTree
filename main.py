@@ -10,7 +10,7 @@ pygame.init()
 screen_width = 1280
 screen_height = 750
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Climate Change Game Thingie")
+pygame.display.set_caption("SustainabiliTree")
 clock = pygame.time.Clock()
 
 # logic
@@ -104,6 +104,7 @@ def buyUpgrade(index):
     updateTitleText()
     upgradesAmount[index] += 1
     start_button.cpsPower = gcps
+    print(start_button.cpsPower, gcps)
 
   else:
     print("You don't have enough money to complete this purchase. (You have " +
@@ -242,6 +243,10 @@ upgrade2Counter = 0
 upgrade3Counter = 0
 upgrade4Counter = 0
 
+CRED_TEXT = get_font(25).render(str("Made by: JH, RS, DK, RC"), True, "#00ff00")
+CRED_RECT = CRED_TEXT.get_rect(center=((screen_width // 2), 50))
+CRED_RECT.center = (screen_width // 2, (screen_height // 2) + 335)
+
 while running:
   events = pygame.event.get()
   for event in events:
@@ -249,6 +254,7 @@ while running:
       running = False
 
   screen.fill("#000000")
+  
   clicks = start_button.Clicks
   greenCoin = clicks
 
@@ -277,7 +283,13 @@ while running:
   else:
     screen.blit(bg, (0, 0))
 
-  logoicon = pygame.image.load('logo.png')
+  print("forest", upgradesAmount['Forest'])
+  print("tree", upgradesAmount['Tree'])
+  print("bush", upgradesAmount['Bush'])
+  print("plant", upgradesAmount['Plant'])
+  print("sapling", upgradesAmount['Sapling'])
+
+  logoicon = pygame.image.load('image_2023-05-20_150250503.png')
   logoicon = pygame.transform.scale(logoicon, (250, 105))
   screen.blit(logoicon, (15, 623))
 
@@ -291,6 +303,8 @@ while running:
 
   start_button.draw()
   updateTitleText()
+
+  screen.blit(CRED_TEXT, CRED_RECT)
 
   GCPS_TEXT = get_font(35).render(
     str(gcps) + ' coins per click', True, '#ffffff')
@@ -333,6 +347,7 @@ while running:
   screen.blit(upgradeFive_TEXT, upgradeFive_RECT)
 
   if start_button.check_click():
+    print(start_button.Clicks)
     continue
 
   if upgrade_button.check_click():

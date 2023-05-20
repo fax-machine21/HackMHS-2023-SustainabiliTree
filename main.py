@@ -104,6 +104,7 @@ def buyUpgrade(index):
     updateTitleText()
     upgradesAmount[index] += 1
     start_button.cpsPower = gcps
+    print(start_button.cpsPower, gcps)
 
   else:
     print("You don't have enough money to complete this purchase. (You have " +
@@ -124,7 +125,7 @@ start_button = BUttons("Click!", start_button_width, start_button_height,
 
 upgrade_button_width = 275
 upgrade_button_height = 75
-upgrade_button_x = ((screen_width - upgrade_button_width) / 2) + 485
+upgrade_button_x = ((screen_width - upgrade_button_width) / 2) + 470
 upgrade_button_y = ((screen_height - upgrade_button_height) / 2) - 300
 upgrade_button_pos = (upgrade_button_x, upgrade_button_y)
 upgrade_button_elevation = 10
@@ -134,7 +135,7 @@ upgrade_button = BUttons("upgrade", upgrade_button_width,
 
 upgrade1_button_width = 275
 upgrade1_button_height = 100
-upgrade1_button_x = (screen_width - upgrade1_button_width) / 2 + 500
+upgrade1_button_x = (screen_width - upgrade1_button_width) / 2 + 485
 upgrade1_button_y = ((screen_height - upgrade1_button_height) / 2) - 185
 upgrade1_button_pos = (upgrade_button_x, upgrade1_button_y)
 upgrade1_button_elevation = 10
@@ -144,7 +145,7 @@ upgrade1_button = BUttons("upgrade1", upgrade1_button_width,
 
 upgrade2_button_width = 275
 upgrade2_button_height = 100
-upgrade2_button_x = (screen_width - upgrade2_button_width) / 2 + 485
+upgrade2_button_x = (screen_width - upgrade2_button_width) / 2 + 470
 upgrade2_button_y = ((screen_height - upgrade2_button_height) / 2) - 70
 upgrade2_button_pos = (upgrade2_button_x, upgrade2_button_y)
 upgrade2_button_elevation = 10
@@ -224,6 +225,16 @@ investment4_button = BUttons("investment4", investment4_button_width,
 
 bg = pygame.image.load('bg.png')
 bg = pygame.transform.scale(bg, (screen_width, screen_height))
+bg1 = pygame.image.load('bg1.png')
+bg1 = pygame.transform.scale(bg1, (screen_width, screen_height))
+bg2 = pygame.image.load('bg2.png')
+bg2 = pygame.transform.scale(bg2, (screen_width, screen_height))
+bg3 = pygame.image.load('bg3.png')
+bg3 = pygame.transform.scale(bg3, (screen_width, screen_height))
+bg4 = pygame.image.load('bg4.png')
+bg4 = pygame.transform.scale(bg4, (screen_width, screen_height))
+bg5 = pygame.image.load('bg5.png')
+bg5 = pygame.transform.scale(bg5, (screen_width, screen_height))
 
 running = True
 upgradeCounter = 0
@@ -253,13 +264,30 @@ while running:
   investment2_button.draw()
   investment3_button.draw()
   investment4_button.draw()
-  screen.blit(bg, (0, 0))
 
-  
+  if upgradesAmount['Forest'] > 0:
+    screen.blit(bg5, (0, 0))
+  elif upgradesAmount['Tree'] > 0:
+    screen.blit(bg4, (0, 0))
+  elif upgradesAmount['Bush'] > 0:
+    screen.blit(bg3, (0, 0))
+  elif upgradesAmount['Plant'] > 0:
+    screen.blit(bg2, (0, 0))
+  elif upgradesAmount['Sapling'] > 0:
+    screen.blit(bg1, (0, 0))
+  else:
+    screen.blit(bg, (0, 0))
+
+  print("forest", upgradesAmount['Forest'])
+  print("tree", upgradesAmount['Tree'])
+  print("bush", upgradesAmount['Bush'])
+  print("plant", upgradesAmount['Plant'])
+  print("sapling", upgradesAmount['Sapling'])
+
   logoicon = pygame.image.load('image_2023-05-20_150250503.png')
   logoicon = pygame.transform.scale(logoicon, (250, 105))
   screen.blit(logoicon, (15, 623))
-  
+
   def updateTitleText():
     global greenCoin, clicks, TITLE_TEXT
     clicks = greenCoin
@@ -286,13 +314,13 @@ while running:
 
   upgradeTwo_TEXT = get_font(15).render(str(upgrades['Plant']), True,
                                         '#000000')
-  upgradeTwo_RECT = upgradeTwo_TEXT.get_rect(center=((screen_width // 2 - 10), 50))
+  upgradeTwo_RECT = upgradeTwo_TEXT.get_rect(center=((screen_width // 2), 50))
   upgradeTwo_RECT.center = (screen_width - 160, 208)
   screen.blit(upgradeTwo_TEXT, upgradeTwo_RECT)
 
   upgradeThree_TEXT = get_font(15).render(str(upgrades['Bush']), True,
                                           '#000000')
-  upgradeThree_RECT = upgradeThree_TEXT.get_rect(center=((screen_width // 2 - 10),
+  upgradeThree_RECT = upgradeThree_TEXT.get_rect(center=((screen_width // 2),
                                                          50))
   upgradeThree_RECT.center = (screen_width - 165, 316)
   screen.blit(upgradeThree_TEXT, upgradeThree_RECT)
@@ -312,6 +340,7 @@ while running:
   screen.blit(upgradeFive_TEXT, upgradeFive_RECT)
 
   if start_button.check_click():
+    print(start_button.Clicks)
     continue
 
   if upgrade_button.check_click():

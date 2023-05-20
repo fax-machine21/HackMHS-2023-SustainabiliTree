@@ -48,14 +48,14 @@ investments = {
   'Solar Panels': 5000,
   'Reforestation Drones': 5000,
   'Electric Vehicles': 5000,
-  'Renewable Fuel': 5000,
+  'Renewable Fuels': 5000,
   'Carbon Capture': 5000
 }
 risk_reward = {
   'Solar Panels': [-0.2, 1.2],
   'Reforestation Drones': [-0.5, 1.5],
   'Electric Vehicles': [-0.3, 1.3],
-  'Renewable Fuel': [-0.2, 1.3],
+  'Renewable Fuels': [-0.2, 1.3],
   'Carbon Capture': [-0.4, 1.8]
 }
 

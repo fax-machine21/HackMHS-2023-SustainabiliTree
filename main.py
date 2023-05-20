@@ -284,11 +284,6 @@ while running:
   else:
     screen.blit(bg, (0, 0))
 
-  print("forest", upgradesAmount['Forest'])
-  print("tree", upgradesAmount['Tree'])
-  print("bush", upgradesAmount['Bush'])
-  print("plant", upgradesAmount['Plant'])
-  print("sapling", upgradesAmount['Sapling'])
 
   logoicon = pygame.image.load('logo.png')
   logoicon = pygame.transform.scale(logoicon, (250, 105))

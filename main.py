@@ -236,6 +236,7 @@ bg4 = pygame.transform.scale(bg4, (screen_width, screen_height))
 bg5 = pygame.image.load('bg5.png')
 bg5 = pygame.transform.scale(bg5, (screen_width, screen_height))
 
+logo_coords = (15, 623)
 running = True
 upgradeCounter = 0
 upgrade1Counter = 0
@@ -273,21 +274,26 @@ while running:
 
   if upgradesAmount['Forest'] > 0:
     screen.blit(bg5, (0, 0))
+    logo_coords = (28, 618)
   elif upgradesAmount['Tree'] > 0:
     screen.blit(bg4, (0, 0))
+    logo_coords = (25, 623)
   elif upgradesAmount['Bush'] > 0:
     screen.blit(bg3, (0, 0))
+    logo_coords = (25, 618)
   elif upgradesAmount['Plant'] > 0:
     screen.blit(bg2, (0, 0))
+    logo_coords = (25, 618)
   elif upgradesAmount['Sapling'] > 0:
     screen.blit(bg1, (0, 0))
+    logo_coords = (25, 618)
   else:
     screen.blit(bg, (0, 0))
-
+    logo_coords = (15, 623)
 
   logoicon = pygame.image.load('logo.png')
   logoicon = pygame.transform.scale(logoicon, (250, 105))
-  screen.blit(logoicon, (15, 623))
+  screen.blit(logoicon, logo_coords)
 
   def updateTitleText():
     global greenCoin, clicks, TITLE_TEXT

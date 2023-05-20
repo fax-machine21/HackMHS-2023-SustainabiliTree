@@ -55,7 +55,7 @@ risk_reward = {
   'Solar Panels': [-0.2, 1.2],
   'Reforestation Drones': [-0.5, 1.5],
   'Electric Vehicles': [-0.3, 1.3],
-  'Renewable Fuel': [-0.25, 1.25],
+  'Renewable Fuel': [-0.2, 1.3],
   'Carbon Capture': [-0.4, 1.8]
 }
 
@@ -256,7 +256,6 @@ while running:
   investment4_button.draw()
   screen.blit(bg, (0, 0))
 
-  
   logoicon = pygame.image.load('image_2023-05-20_150250503.png')
   logoicon = pygame.transform.scale(logoicon, (250, 105))
   screen.blit(logoicon, (15, 623))
@@ -282,20 +281,20 @@ while running:
   upgradeOne_TEXT = get_font(15).render(str(upgrades['Sapling']), True,
                                         '#000000')
   upgradeOne_RECT = upgradeOne_TEXT.get_rect(center=((screen_width // 2), 50))
-  upgradeOne_RECT.center = (screen_width - 150, 94)
+  upgradeOne_RECT.center = (screen_width - 160, 94)
   screen.blit(upgradeOne_TEXT, upgradeOne_RECT)
 
   upgradeTwo_TEXT = get_font(15).render(str(upgrades['Plant']), True,
                                         '#000000')
-  upgradeTwo_RECT = upgradeTwo_TEXT.get_rect(center=((screen_width // 2), 50))
-  upgradeTwo_RECT.center = (screen_width - 150, 208)
+  upgradeTwo_RECT = upgradeTwo_TEXT.get_rect(center=((screen_width // 2 - 10), 50))
+  upgradeTwo_RECT.center = (screen_width - 160, 208)
   screen.blit(upgradeTwo_TEXT, upgradeTwo_RECT)
 
   upgradeThree_TEXT = get_font(15).render(str(upgrades['Bush']), True,
                                           '#000000')
-  upgradeThree_RECT = upgradeThree_TEXT.get_rect(center=((screen_width // 2),
+  upgradeThree_RECT = upgradeThree_TEXT.get_rect(center=((screen_width // 2 - 10),
                                                          50))
-  upgradeThree_RECT.center = (screen_width - 155, 316)
+  upgradeThree_RECT.center = (screen_width - 165, 316)
   screen.blit(upgradeThree_TEXT, upgradeThree_RECT)
 
   upgradeFour_TEXT = get_font(15).render(str(upgrades['Tree']), True,

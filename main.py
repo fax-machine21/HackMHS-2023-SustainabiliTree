@@ -284,7 +284,7 @@ while running:
   def updateTitleText():
     global greenCoin, clicks, TITLE_TEXT
     clicks = greenCoin
-    TITLE_TEXT = get_font(70).render(str(greenCoin), True, "#ffffff")
+    TITLE_TEXT = get_font(70).render(str(int(greenCoin)), True, "#ffffff")
     TITLE_RECT = TITLE_TEXT.get_rect(center=((screen_width // 2), 50))
     TITLE_RECT.center = (screen_width // 2, (screen_height // 2) - 275)
     screen.blit(TITLE_TEXT, TITLE_RECT)

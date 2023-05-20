@@ -256,6 +256,11 @@ while running:
   investment4_button.draw()
   screen.blit(bg, (0, 0))
 
+  
+  logoicon = pygame.image.load('image_2023-05-20_150250503.png')
+  logoicon = pygame.transform.scale(logoicon, (250, 105))
+  screen.blit(logoicon, (15, 623))
+  
   def updateTitleText():
     global greenCoin, clicks, TITLE_TEXT
     clicks = greenCoin

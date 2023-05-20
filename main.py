@@ -104,7 +104,6 @@ def buyUpgrade(index):
     updateTitleText()
     upgradesAmount[index] += 1
     start_button.cpsPower = gcps
-    print(start_button.cpsPower, gcps)
 
   else:
     print("You don't have enough money to complete this purchase. (You have " +
@@ -349,7 +348,6 @@ while running:
   screen.blit(upgradeFive_TEXT, upgradeFive_RECT)
 
   if start_button.check_click():
-    print(start_button.Clicks)
     continue
 
   if upgrade_button.check_click():
